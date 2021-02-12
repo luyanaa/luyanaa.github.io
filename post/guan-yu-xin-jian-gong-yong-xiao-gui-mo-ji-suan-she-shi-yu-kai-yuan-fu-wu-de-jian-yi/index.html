@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>关于新建公用小规模计算设施与开源服务的建议 | 退思录 Meditation</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="http://rikugen.in/favicon.ico?v=1613157927930">
+<link rel="stylesheet" href="http://rikugen.in/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="
+本文拟待时机成熟提交校方。
+
+现状解析
+同济大学是中国的一流大学，但其网络与计算基础设施的建设上却与中国、世界的一流水准差距甚大。随着科学技术的迅速发展，随着同济大学学科水准与学生科学素养的高速进步，目前基础设施的落后已经给越来越多的同学..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="http://rikugen.in">
+        <img src="http://rikugen.in/images/avatar.png?v=1613157927930" class="site-logo">
+        <h1 class="site-title">退思录 Meditation</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            Index
+          </a>
+        
+      
+        
+          <a href="/post/lecture-notes-and-resources" class="site-nav">
+            Lecture Notes &amp; Resources
+          </a>
+        
+      
+        
+          <a href="/post/links" class="site-nav">
+            Links
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            About Me
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/luyanaa" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+          <a class="social-link" href="https://www.zhihu.com/people/robin-68-93-62" target="_blank">
+            <i class="fab fa-zhihu"></i>
+          </a>
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      天际划过的流星，已经消失在夜空中
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="http://rikugen.in/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">关于新建公用小规模计算设施与开源服务的建议</h2>
+            <div class="post-date">2021-02-13</div>
+            
+            <div class="post-content" v-pre>
+              <blockquote>
+<p>本文拟待时机成熟提交校方。</p>
+</blockquote>
+<h2 id="现状解析">现状解析</h2>
+<p>同济大学是中国的一流大学，但其网络与计算基础设施的建设上却与中国、世界的一流水准差距甚大。随着科学技术的迅速发展，随着同济大学学科水准与学生科学素养的高速进步，目前基础设施的落后已经给越来越多的同学、老师造成了不便。</p>
+<h2 id="问题症结">问题症结</h2>
+<p>信息类及其相关学科的同学在配置课程所需环境时，往往遇到很大的障碍。由于众所周知的原因，中国大陆的民用国际线路质量极低，并且让人大有一年不如一年之感。在下载例如 TDM-GCC/MinGW 或是 Anaconda 这样的编程基础环境的时候，同学们往往不得不浪费大量时间等待、重启下载任务，甚至使用一些处于法律灰色地带的手段加快下载速度，保证线路质量。为此虽然其他学校率先建立了不少的镜像，但其速度往往缺乏保障，并且在遇到一些未被镜像的重要项目或环境时便束手无策。目前我校确实有自己的开源镜像，但即使是校内访问的速度也往往无法跑到1M/s ，其速度甚至不能与直连外部开源镜像相比，限于条件托管的项目也不全面，往往不能满足校内用户的全面需求。<br>
+在完成这些课程的过程中，往往环境的配置比较困难，且占用不少硬盘空间、内存与 CPU 资源，有时超出了同学购买的入门计算机的能力，占用了许多的时间。有一些老师提供了专供课程同学使用的 Lab Machine 减轻同学的负担，让同学专注于课程知识，但机器的利用率并不很高。<br>
+又比如，土木学院开设的机器学习与大数据计算这门选修课，有同学为了更好的完成期末作业，在 Google Cloud 上租用高端硬件跑了几十个小时，但其机时费用恐怕上百甚至两百轻而易举。也有同学由于缺乏资源，刚入学时训练一个最简单的反向传播神经网络用于识别手写数字数据集，调整一个小参数动辄需要五分钟甚至十五分钟才能验证结果。为了解决一个入门的问题竟花了大半天。<br>
+加速训练所需的显卡， CPU 等设备或是云服务提供商提供的训练用机虽然价格并不是完全高不可攀，但对于一个普通的大学生来说仍然是可观甚至高昂的。此外购入高价硬件后实际使用率并没有如此之高，“买前生产力，买后打游戏”成为了一些同学的常态，而又有许多同学需要计算资源却无法获得。<br>
+在完成课程的合作作业的过程中，一般使用Git及其最成熟的服务提供商 GitHub 进行团队协作与代码版本控制。但 GitHub 国内访问速度极为缓慢、有时根本无法访问，而国内已有的替代往往见钱眼开，限制免费用户不少功能。</p>
+<h2 id="解决建议">解决建议</h2>
+<ul>
+<li>关于虚拟专用服务器设施与高性能计算设施的建立与管理<br>
+前文已经描述了许多问题，解决这些问题，一个比较好的方法是学习云服务提供商的思路，建造一个对全校师生开放计算用设施。由于科技发展、市场竞争激烈，即使从 0 开始建设，其费用已经远低于以前。学校也可以将退役折旧的设备发挥余热，共享出来，让它们发挥更大的价值。<br>
+其管理模式可以使用积分制，即预先分配给同学若干积分，并规定计算资源消耗的单位积分。通过对运行数据的监控可以计算出实际消耗的积分，从而达到资源分配的效果。对于有灵活调度、灵活分配资源需求的场合，这种制度已经表现出了自己的优势。<br>
+此外，高性能计算设施与虚拟专用服务器可以统一管理。在设施规模不很大的情况下，登陆节点、管理节点不需要独立设置，作为VPS的一个实例与其他实例共同托管，这样可以更加有效的节约管理成本。</li>
+<li>开源镜像与Git服务<br>
+解决目前Git服务的各种不足，最好的方式就是自建 Git 服务。其意义不仅如前文所述，有很多未被镜像的重要项目正是以 Git 的形式被托管的，而目前流行的自建Git服务普遍支持维护 Git 镜像。关于镜像，可以以我校原有的镜像的模式，对其进行升级等工作，为我们的学习起到良好用途。<br>
+两者目前都已经有很成熟的方案。我校的学长在开源镜像的建立方面已经有了很多成熟的工作。其他可供参考的还有 TUNA 的源码与脚本。Git服务则有从轻量级的 Gogs 到重量级的 Gitlab 。</li>
+</ul>
+<h2 id="相关实例">相关实例</h2>
+<ul>
+<li>关于开源镜像及高校内部 Git Service</li>
+</ul>
+<blockquote>
+<p>略。</p>
+</blockquote>
+<ul>
+<li>关于校内的用于科学计算、人工智能、项目编译等用途的高性能计算设施</li>
+</ul>
+<ol>
+<li>UIUC<br>
+UIUC 在 CUDA 刚刚走入人们视线的2008年，就已经引入了一套对参与其课程的学生开放的 32 个 node 的 Cluster 用于 CUDA 教学。 UIUC 现役的 cluster 是以 16 个 IBM Power9 节点， 4 块 NVIDIA Tesla V100 与其他辅助设施组成，也开放使用。</li>
+<li>日本北陆先端科技大学<br>
+JAIST 的 Cray XC40 与 HPE UX3000 允许全校师生共同使用。</li>
+<li>坦普尔大学<br>
+该大学现有多种适用于不同用途的节点组成集群，且 Compute servers are open to all members of the Temple community with justifiable need for access to HPC computing resources and a valid and active AccessNet account.</li>
+<li>普林斯顿<br>
+该校提供数目众多的多种集群，较小的两个集群允许学生使用。<br>
+此外，国内的北京大学，清华大学，湖南大学等学校都有在小范围内允许学生使用的高性能计算设施。</li>
+</ol>
+<h2 id="关于校内的用于实验的虚拟专用服务器设施">关于校内的用于实验的虚拟专用服务器设施</h2>
+<ol>
+<li>卡耐基梅隆大学 15-213 课程<br>
+卡耐基梅隆大学的 15-213 课程是一门计算机系统结构相关的入门课程。为了降低课程作业评价难度，减少变化因素，该课程的操作系统及编译器规定为早期版本的 RHEL 与 GCC ，使用的硬件种类也都被统一。</li>
+<li>我校的高级语言程序设计（课号：10071901，任课老师：沈坚）<br>
+这门课的作业要求在多个操作系统，多种 C/C++ 编译器下通过编译，并正常运行，以保证良好的可移植性。因此，沈老师搭建了一个测试用服务器，使没有足够能力或资源自行搭建环境的同学也能使用这一服务器自行测试程序是否符合上述作业要求。</li>
+</ol>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="http://rikugen.in/post/qian-tan-da-nao-wang-luo-jie-gou-dui-da-nao-jue-ce-neng-li-de-ying-xiang/">
+                  <h3 class="post-title">
+                    浅谈大脑网络结构对大脑决策能力的影响
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

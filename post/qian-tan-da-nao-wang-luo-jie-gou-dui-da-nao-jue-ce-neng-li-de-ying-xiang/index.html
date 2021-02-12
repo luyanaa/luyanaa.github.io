@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>浅谈大脑网络结构对大脑决策能力的影响 | 退思录 Meditation</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="http://rikugen.in/favicon.ico?v=1613157927930">
+<link rel="stylesheet" href="http://rikugen.in/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="从结构上看，大脑是由突触互相连接的海量神经元构成的极为复杂的器官。正是这种相互连接的极为复杂的模式，支撑起了脑的全部功能。这样一种连接模式，可以被抽象为网络结构，进行各种量化分析，为大脑结构的研究提供材料。复杂网络的研究中，本身已经有“结构..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="http://rikugen.in">
+        <img src="http://rikugen.in/images/avatar.png?v=1613157927930" class="site-logo">
+        <h1 class="site-title">退思录 Meditation</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            Index
+          </a>
+        
+      
+        
+          <a href="/post/lecture-notes-and-resources" class="site-nav">
+            Lecture Notes &amp; Resources
+          </a>
+        
+      
+        
+          <a href="/post/links" class="site-nav">
+            Links
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            About Me
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/luyanaa" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+          <a class="social-link" href="https://www.zhihu.com/people/robin-68-93-62" target="_blank">
+            <i class="fab fa-zhihu"></i>
+          </a>
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      天际划过的流星，已经消失在夜空中
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="http://rikugen.in/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">浅谈大脑网络结构对大脑决策能力的影响</h2>
+            <div class="post-date">2021-02-13</div>
+            
+            <div class="post-content" v-pre>
+              <p>从结构上看，大脑是由突触互相连接的海量神经元构成的极为复杂的器官。正是这种相互连接的极为复杂的模式，支撑起了脑的全部功能。这样一种连接模式，可以被抽象为网络结构，进行各种量化分析，为大脑结构的研究提供材料。复杂网络的研究中，本身已经有“结构决定功能”的研究范式。从这种观点出发，大脑网络结构，及其与决策能力关系便成为了一个十分重要的研究方向。<br>
+我们知道，对于单个神经元的刻画，比较符合实际的是Hodgkin–Huxley模型[4]。具体而言，这个模型将单个神经元转化为如下图所示的电路模型。我们如果把某一个网络的每个节点都用这样一个模型替代，每一条边都看作是突触的话，就比较接近脑网络。<br>
+参考文献[1]对这样的网络进行了研究，考察了动力学过程在不同的网络上表现出的特性。在Regular Network上，网络能持续震荡，但不能快速响应，这种特性可能成为状态传播与信息处理的阻碍。在Random Network上，网络能快速响应，但不能持续震荡，很难形成传播的模式。在介于两者间的Small-World Network上，网络同时能快速响应与持续震荡。脑网络的结构属于Small-World Network[3]，恐怕不仅是巧合，而是功能与结构的统一的体现。<br>
+以上说的一些方法主要是在和大脑有很强关联的理论模型上进行研究。相对应的，对实体的脑的研究，比较值得注意的有对猫[5]或者猕猴[6]的大脑皮层网络结构的研究。这些研究指出脑区应是具有强耦合，并高度同步的组织，此外脑的结构分区和功能分区相当接近。<br>
+对人的静息态的fMRI成像数据进行分析，不仅印证了结构特性与功能之间的关系，还发现功能链接的强度，时空分布受到了结构网络的制约。但仅仅分析功能链接却并不能得出结构链接[9]。<br>
+具体到大脑网络结构与具体的能力，有一些重要的研究结果，例如智商与脑结构与功能网络最短路径长度成反比，且网络结构会随年龄，状态发生变化。<br>
+对于大脑疾病来说，例如癫痫患者的大脑网络结构[11],[12]在发病前——发病时——发病后有很明显的Random Network-Regular Network-Random Network的情况，在特定的频带内，癫痫患者的网络结构更加稠密，并表现出明显的模块结构。<br>
+对阿尔兹海默症患者[13],[14]，患者脑网络的功能与拓扑结构都明显由Small-World向Regular Network转变，这可以作为区分患者与正常人的重要指标。同时其脑网络的最短路径与聚类系数都大幅增加。<br>
+目前，由于对大脑网络结构探索的手段有限（限于观察的时间空间粒度，观察所需要的条件），对网络本身分析手段的有限，这一方面还有许多难题，接下来随着一些新方法（例如图机器学习、硬件模拟动力学性质）的发展，这方面将会有更大的收获。<br>
+[1] Lago-Fernández L F, Huerta R, Corbacho F, et al. Fast response and temporal coherent oscillations in small-world networks[J]. Physical Review Letters, 2000, 84(12): 2758.<br>
+[2] Stam C J, Reijneveld J C. Graph theoretical analysis of complex networks in the brain[J]. Nonlinear biomedical physics, 2007, 1(1): 3.<br>
+[3] Sporns O ,  Chialvo D R ,  Kaiser M , et al. Organization, development and function of complex brain networks.[J]. Trends in Cognitive Sciences, 2004, 8(9):418-425.<br>
+[4] Hodgkin A.L., Huxley A.F. (August 1952). &quot;A quantitative description of membrane current and its application to conduction and excitation in nerve&quot;. The Journal of Physiology. 117 (4): 500–44.<br>
+[5] Zemanová L, Zhou C, Kurths J. Structural and functional clusters of complex brain networks[J]. Physica D: Nonlinear Phenomena, 2006, 224(1-2): 202-212.<br>
+[6] Honey C J, Kötter R, Breakspear M, et al. Network structure of cerebral cortex shapes functional connectivity on multiple time scales[J]. Proceedings of the National Academy of Sciences, 2007, 104(24): 10240-10245.<br>
+[7] 张方风, 郑志刚. 复杂脑网络研究:现状与挑战[J]. 上海理工大学学报, 2012, 034(002):138-153.<br>
+[8] 涂燊, 赵光, 曹晓君,等. 脑网络研究述评[J]. Advances in Psychology, 2013, 03(06):929-931.<br>
+[9] Koch M A ,  Norris D G ,  Hund-Georgiadis M . An investigation of functional and anatomical connectivity using magnetic resonance imaging.[J]. Neuroimage, 2002, 16(1):241-250.<br>
+[10] 蒋田仔,刘勇,李永辉.脑网络:从脑结构到脑功能[J].生命科学,2009,21(2):181-188.<br>
+[11] Schindler K A，Bialonski S，Horstmann M T，et al． Evolving functional network properties and synchronizability during human<br>
+epileptic seizures ［J］． Chaos，2008，18 ( 3) : 033119．<br>
+[12] Chavez M，Valencia M ，Navarro V，et al． Functional modularity of background activities in normal and epileptic brain networks ［J］． Phys Rev Lett，104 ( 11) : 118701．<br>
+[13] He Y，Chen Z，Evans A． Structural insights into aberrant topological patterns of large-scale cortical networks in alzheimer’s<br>
+disease ［J］． J Neurosci，2008，28 ( 18) : 4756 － 66．<br>
+[14] Stam C J，de Haan W，Daffertshofer A，et al． Graph theoretical analysis of magnetoencephalographic functional connectivity in<br>
+Alzheimer’s disease ［J］． Brain，2009，132 ( 1) : 213 － 24．<br>
+[15] 孙俊峰, 洪祥飞, 童善保. 复杂脑网络研究进展——结构、功能、计算与应用[J]. 复杂系统与复杂性科学, 2010, 07(004):74-90.<br>
+[16] Micheloyannis S, Pachou E, Stam CJ, et al. Using graph theoretical analysis of multi channel EEG to evaluate the neural efficiency hypothesis. Neurosci Lett, 2006, 402: 273-7</p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="http://rikugen.in/post/mini-fm-in-japan/">
+                  <h3 class="post-title">
+                    Mini FM in Japan
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

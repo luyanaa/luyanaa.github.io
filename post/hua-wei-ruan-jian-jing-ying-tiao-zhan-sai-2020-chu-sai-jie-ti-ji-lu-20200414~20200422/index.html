@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>华为软件精英挑战赛 2020初赛 解题记录 (2020.04.14~2020.04.22) | 退思录 Meditation</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="http://rikugen.in/favicon.ico?v=1613157927930">
+<link rel="stylesheet" href="http://rikugen.in/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="题意
+
+给定一个有向图，求出图中所有长度在 [3,7][3,7][3,7] 之间的简单环。
+输入：格式为 [IDu,IDv,(Unused)][ID_u,ID_v,(Unused)][IDu​,IDv​,(Unused)] 的边表， $ I..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="http://rikugen.in">
+        <img src="http://rikugen.in/images/avatar.png?v=1613157927930" class="site-logo">
+        <h1 class="site-title">退思录 Meditation</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            Index
+          </a>
+        
+      
+        
+          <a href="/post/lecture-notes-and-resources" class="site-nav">
+            Lecture Notes &amp; Resources
+          </a>
+        
+      
+        
+          <a href="/post/links" class="site-nav">
+            Links
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            About Me
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/luyanaa" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+          <a class="social-link" href="https://www.zhihu.com/people/robin-68-93-62" target="_blank">
+            <i class="fab fa-zhihu"></i>
+          </a>
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      天际划过的流星，已经消失在夜空中
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="http://rikugen.in/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">华为软件精英挑战赛 2020初赛 解题记录 (2020.04.14~2020.04.22)</h2>
+            <div class="post-date">2020-04-22</div>
+            
+            <div class="post-content" v-pre>
+              <h2 id="题意">题意</h2>
+<ul>
+<li>给定一个有向图，求出图中所有长度在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mn>3</mn><mo separator="true">,</mo><mn>7</mn><mo>]</mo></mrow><annotation encoding="application/x-tex">[3,7]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">7</span><span class="mclose">]</span></span></span></span> 之间的简单环。</li>
+<li>输入：格式为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mi>I</mi><msub><mi>D</mi><mi>u</mi></msub><mo separator="true">,</mo><mi>I</mi><msub><mi>D</mi><mi>v</mi></msub><mo separator="true">,</mo><mo>(</mo><mi>U</mi><mi>n</mi><mi>u</mi><mi>s</mi><mi>e</mi><mi>d</mi><mo>)</mo><mo>]</mo></mrow><annotation encoding="application/x-tex">[ID_u,ID_v,(Unused)]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">u</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03588em;">v</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">U</span><span class="mord mathdefault">n</span><span class="mord mathdefault">u</span><span class="mord mathdefault">s</span><span class="mord mathdefault">e</span><span class="mord mathdefault">d</span><span class="mclose">)</span><span class="mclose">]</span></span></span></span> 的边表， $ ID \leq 2^{31} $ ， $ E \leq 280000 $ ， 结点平均度数小于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>10</mn></mrow><annotation encoding="application/x-tex">10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span></span></span></span> 。环中同一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>I</mi><mi>D</mi></mrow><annotation encoding="application/x-tex">ID</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span></span></span></span> 不可以重复出现（若大环包括小环，则需要分开统计），环的个数 $ \leq 3 \times 10^7 $ 。</li>
+<li>输出：按照环长度与环的数字字典序输出所有环。</li>
+</ul>
+<h2 id="朴素-优化">朴素 &amp; 优化</h2>
+<p>用 DFS 直接找环。</p>
+<blockquote>
+<p>通过观察不难发现，在比较稠密的图上，长度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span></span></span></span> 的环的数量相比长度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">N-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 的环的数量是指数增长的（和结点的平均度数有关）。<br>
+如果能通过只搜索到第 6 层，而非第 7 层就得到所有的解，就能够将运行的时间有效的缩减到原先的1/6左右。<br>
+我们定义如下的数据结构： <code>vector&lt;unordered_map&lt;int,vector&lt;int&gt;&gt;&gt; P2;</code><br>
+使用 <code>P2[i][j][k]</code> 来表示结点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span> 到达结点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span></span></span></span> ，中间经过结点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 的路径详情，如果 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 不在我们已经搜索过的结点列表中，并且 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span></span></span></span> 是起点，那么 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mo>−</mo><mi>k</mi><mo>−</mo><mi>j</mi></mrow><annotation encoding="application/x-tex">i-k-j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.74285em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span></span></span></span> 就是符合要求的路径的一部分。<br>
+具体来说，就是提前做深度为 2 的搜索（保存最后一层结点的入边），在第 6 层时直接根据现有结果进行判断，不进入第 7 层。</p>
+</blockquote>
+<pre><code class="language-c++">#include &lt;fcntl.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;sys/mman.h&gt;
+#include &lt;sys/types.h&gt;
+#include &lt;sys/stat.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;algorithm&gt;
+#include &lt;unordered_map&gt;
+#include &lt;vector&gt;
+#include &lt;string.h&gt;
+#include &lt;stdlib.h&gt;
+#define DEBUG
+const int MAXN=(560000+5);
+const int MAXE=(280000+5);
+typedef unsigned int uInt32;
+
+struct Path{
+	int length;
+	std::vector&lt;uInt32&gt; path;
+	Path(int length, const std::vector&lt;uInt32&gt; &amp;path) : length(length), path(path) {}
+	bool operator&lt;(const Path&amp;rhs)const{
+		if(length!=rhs.length) return length&lt;rhs.length;
+		for(int i=0;i&lt;length;i++) if(path[i]!=rhs.path[i]) return path[i]&lt;rhs.path[i];
+	}
+};
+
+std::vector &lt;uInt32&gt; I;
+std::vector &lt;uInt32&gt; _T; // ID -&gt; Account
+std::unordered_map&lt;uInt32,int&gt; Id; // Account -&gt; ID
+std::vector &lt;Path&gt; ans;
+int tot=0,nodeCnt;
+int h[MAXN],edge[MAXE],nxt[MAXE],inDegrees[MAXN];
+void addEdge(int u,int v){edge[++tot]=v,nxt[tot]=h[u],h[u]=tot;}
+
+bool vis[MAXN];
+void dfs(int head,int now,int depth,std::vector&lt;int&gt; &amp;path){
+	vis[now]=true;
+	path.push_back(now);
+	for(int e=h[now];e!=-1;e=nxt[e]){
+		register int v=edge[e];
+		if(v==head &amp;&amp; depth&gt;=3 &amp;&amp; depth&lt;=7){
+			std::vector&lt;uInt32&gt; tmp;
+			for(std::vector&lt;int&gt;::iterator it=path.begin();it!=path.end();++it) tmp.push_back(_T[*it]);
+			ans.emplace_back(Path(depth,tmp));
+		}
+		if(depth&lt;7 &amp;&amp; !vis[v] &amp;&amp; v&gt;head) dfs(head,v,depth+1,path);
+	}
+	vis[now]=false;
+	path.pop_back();
+}
+
+inline uInt32 ReaduInt(char **p){
+	        register uInt32 ret=0;
+		char c;
+		while((**p)&gt;'9'||(**p)&lt;'0') ++(*p);
+		while((**p)&gt;='0'&amp;&amp;(**p)&lt;='9'){
+			ret=ret*10+(**p)-'0';
+			++(*p);
+		}
+		return ret;
+}
+
+int main(){
+	/* 使用 POSIX open() 和 mmap() 读入 */
+	int in=open(&quot;test_data.txt&quot;,O_RDONLY);	
+	char *addr= (char *) mmap(NULL,lseek(in,0,SEEK_END),PROT_READ,MAP_PRIVATE,in,0);
+	#ifdef DEBUG
+		printf(&quot;Open Success\n&quot;);
+	#endif
+	register uInt32 u,v,c;
+	while(true){
+		while((*addr)=='\n'||(*addr)==' '||(*addr)=='\r') ++addr;
+		if((*addr)!=EOF&amp;&amp;(*addr)!='\0') u=ReaduInt(&amp;addr),v=ReaduInt(&amp;addr),c=ReaduInt(&amp;addr);
+		else break;
+		I.push_back(u);
+		I.push_back(v);
+	}
+	#ifdef DEBUG
+		printf(&quot;READ OK\n&quot;);
+	#endif
+	
+	/* 节点的离散化 */
+	_T.assign(I.begin(),I.end());
+	std::sort(_T.begin(),_T.end());
+	_T.erase(std::unique(_T.begin(),_T.end()),_T.end());
+	nodeCnt=0;
+	for(std::vector&lt;uInt32&gt;::iterator it=_T.begin();it!=_T.end();++it) Id[*it]=nodeCnt++;
+	int InputSize=I.size();
+	#ifdef DEBUG
+		printf(&quot;Relabel OK\n&quot;);
+	#endif
+	
+	/* 建图 */
+	memset(edge,0,sizeof(edge));
+	for(int i=0;i&lt;MAXN;++i) h[i]=-1;
+	for(int i=0;i&lt;MAXE;++i) nxt[i]=-1;
+	for(int i=0;i&lt;InputSize;i+=2){
+		register int u=Id[I[i]],v=Id[I[i+1]];
+		addEdge(u,v);
+		++inDegrees[v];}
+	#ifdef DEBUG
+		printf(&quot;Construct Graph OK\n&quot;);
+	#endif
+	
+	/* 搜索 */
+	std::vector&lt;int&gt; __path;
+	for(int i=0;i&lt;nodeCnt;i++) if(h[i]!=-1) dfs(i,i,1,__path);
+	
+	/* 输出答案 */
+	std::sort(ans.begin(),ans.end());
+	printf(&quot;%u\n&quot;,ans.size());
+	for(std::vector&lt;Path&gt;::iterator it=ans.begin();it!=ans.end();++it){
+		printf(&quot;%d&quot;,it-&gt;path[0]);
+		for(int i=1;i&lt;it-&gt;length;i++) printf(&quot;,%d&quot;,it-&gt;path[i]);
+	       	putchar('\n');
+	}
+	return 0;
+}
+</code></pre>
+<h2 id="乱搞">乱搞</h2>
+<p>做深度为 $ 1 \leq Depth \leq 4 $ 的搜索，这时可以统计小于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span></span></span></span> 的环，对于 $ \ge 4 $ 的环，可以直接拼接。<br>
+问题：如何避免非简单环的情况，即考虑 4 与 4 的链是否有交点。直接判断？（常数*16）<br>
+问题：如何由长度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>e</mi><mi>p</mi><mi>t</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">depth</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">d</span><span class="mord mathdefault">e</span><span class="mord mathdefault">p</span><span class="mord mathdefault">t</span><span class="mord mathdefault">h</span></span></span></span> 的链拓展出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>e</mi><mi>p</mi><mi>t</mi><mi>h</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">depth+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">d</span><span class="mord mathdefault">e</span><span class="mord mathdefault">p</span><span class="mord mathdefault">t</span><span class="mord mathdefault">h</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 的链？长度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span> 的由长度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> 的与长度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 的拼接，长度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span></span></span></span> 的由长度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> 的与长度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> 的拼接。<br>
+问题：如何合理存储链？  <code>struct link{uint account[7],head,tail;};</code> ，从小到大存储+归并？<br>
+Hash 考虑用 BKDRHash + <a href="https://www.boost.org/doc/libs/1_35_0/doc/html/boost/hash_combine_id241013.html">hash_combine</a></p>
+<h2 id="hi1620-kunpeng-920-性能参数">Hi1620 (Kunpeng 920) 性能参数</h2>
+<ul>
+<li>64 Cores 64 Threads</li>
+<li>L1: 64KB L2: 512KB * 64C L3: 1MB * 64C</li>
+<li>DDR4-3200</li>
+<li>强内存模型，单核较弱</li>
+</ul>
+<h2 id="比赛环境">比赛环境</h2>
+<ul>
+<li>选手使用的练习资源：2U4G (2C2T L1 2KB L2 1MB L3 2MB)</li>
+<li>判题系统使用的判题资源：4U16G (4C4T L1 4KB L2 2MB L3 4MB)</li>
+<li>EulerOS based on CentOS</li>
+<li>可以预计到虚拟化带来性能损失</li>
+</ul>
+<h2 id="参考文献">参考文献</h2>
+<ol>
+<li><a href="https://zhuanlan.zhihu.com/p/125764650">华为软件精英挑战赛-2020-初赛-题目分析/算法Baseline （求出有向图中所有的环）</a></li>
+</ol>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="http://rikugen.in/post/about/">
+                  <h3 class="post-title">
+                    About Me
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

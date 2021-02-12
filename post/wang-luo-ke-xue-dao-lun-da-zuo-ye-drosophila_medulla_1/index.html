@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>网络科学导论大作业 —— drosophila_medulla_1 | 退思录 Meditation</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="http://rikugen.in/favicon.ico?v=1613157927930">
+<link rel="stylesheet" href="http://rikugen.in/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="Overview
+
+N=1781,M=33641N=1781, M=33641N=1781,M=33641
+数据来源：果蝇的 medulla （延脑？）
+果蝇的视觉信号在理论上一定会经过 medulla
+原论文试图从 medulla 中寻找..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="http://rikugen.in">
+        <img src="http://rikugen.in/images/avatar.png?v=1613157927930" class="site-logo">
+        <h1 class="site-title">退思录 Meditation</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            Index
+          </a>
+        
+      
+        
+          <a href="/post/lecture-notes-and-resources" class="site-nav">
+            Lecture Notes &amp; Resources
+          </a>
+        
+      
+        
+          <a href="/post/links" class="site-nav">
+            Links
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            About Me
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/luyanaa" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+          <a class="social-link" href="https://www.zhihu.com/people/robin-68-93-62" target="_blank">
+            <i class="fab fa-zhihu"></i>
+          </a>
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      天际划过的流星，已经消失在夜空中
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="http://rikugen.in/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">网络科学导论大作业 —— drosophila_medulla_1</h2>
+            <div class="post-date">2020-12-30</div>
+            
+            <div class="post-content" v-pre>
+              <h2 id="overview">Overview</h2>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>=</mo><mn>1781</mn><mo separator="true">,</mo><mi>M</mi><mo>=</mo><mn>33641</mn></mrow><annotation encoding="application/x-tex">N=1781, M=33641</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mord">7</span><span class="mord">8</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span><span class="mord">3</span><span class="mord">6</span><span class="mord">4</span><span class="mord">1</span></span></span></span></li>
+<li>数据来源：果蝇的 medulla （延脑？）</li>
+<li>果蝇的视觉信号在理论上一定会经过 medulla</li>
+<li>原论文试图从 medulla 中寻找出视觉在该部分的处理过程。</li>
+</ul>
+<h2 id="some-indexes">Some indexes</h2>
+<p>平均度：5.466 平均加权度：18.889 平均聚类系数：0.147 直径 11 平均路径长度 4.020873591884404</p>
+<h2 id="度分布讨论">度分布讨论</h2>
+<ul>
+<li>偏差较大的幂律分布</li>
+<li>给定数据有重边，离散性也大</li>
+<li>幂指数估计在 -2 到 -3 左右</li>
+<li>长尾效应显著</li>
+<li>全图绝大多数点的度数不大</li>
+<li>少数点承担了 Hub 工作</li>
+<li>无标度图<br>
+<img src="http://rikugen.in/post-images/1613157333721.jpg" alt="" loading="lazy"></li>
+</ul>
+<h2 id="感性体验-openord可视化">感性体验-OpenOrd+可视化</h2>
+<figure data-type="image" tabindex="1"><img src="http://rikugen.in/post-images/1613157356010.png" alt="" loading="lazy"></figure>
+<h2 id="girvan-newman-algorithm">Girvan-Newman Algorithm</h2>
+<ul>
+<li>Gephi’s Plugin</li>
+<li>Circle Pack Layout 以 Cluster ID 为输入，其中点按Cluster的大小染色，边按权值染色</li>
+<li>（原图中有大量 proofreading 有问题的数据，只选取了有明确分区的进行分析）</li>
+<li>取出粉色的 Cluster 进行详细分析后，该 Cluster 主要由原图中的左下角一部分组成，包括所有紫色的部分和一部分与其相连的部分</li>
+<li>细节：这个 Cluster 的密度比全局密度要高，大约在 0.07 ，平均度数在 5 左右<br>
+<img src="http://rikugen.in/post-images/1613157370689.png" alt="" loading="lazy"></li>
+</ul>
+<h2 id="community-detection">Community Detection</h2>
+<ul>
+<li>直接用 OpenOrd 跑有若干问题</li>
+<li>随机性太强：更换 seed 以后往往跑出来的结果变化比较大</li>
+<li>看不清 Community 的具体性质</li>
+<li>新的问题： NetworkX 的大部分方法实现只能用在无向图上</li>
+<li>表现为运行时报错</li>
+<li>例如 <code>girvan_newman()</code> 直接调用了 <code>g = G.copy().to_undirected()</code></li>
+<li>nx.is_connected(graph) 仅对无向图实现</li>
+<li>效果不佳的原因</li>
+<li>数据信息量太少，仅靠拓扑结构恐怕很难做更加细致的分析</li>
+<li>原文作者是通过细胞的性质给其标上了更精确的信息</li>
+</ul>
+<h2 id="graph-embedding-clustering">Graph Embedding &amp; Clustering</h2>
+<ul>
+<li>试图引入一些机器学习方法</li>
+<li>SCD: 相当糟糕，比猜的还糟糕</li>
+<li>EdMot: 由于有大量未能 proofreading 的数据，很难精确计算准确度，但在已经 proofreading 的数据中，预测的精确度也不好。</li>
+<li>表现较好的 PM2-like <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>c</mi><mi>l</mi><mi>u</mi><mi>s</mi><mi>t</mi><mi>e</mi><mi>r</mi><mo>=</mo><mn>2</mn><mi mathvariant="normal">∣</mi><mi>P</mi><mi>M</mi><mn>2</mn><mo>−</mo><mi>l</mi><mi>i</mi><mi>k</mi><mi>e</mi><mo>)</mo><mo>=</mo><mn>0.5</mn></mrow><annotation encoding="application/x-tex">P( cluster = 2 | PM2-like ) = 0.5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathdefault">c</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">u</span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mord">∣</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mord mathdefault">e</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">5</span></span></span></span> 而 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>P</mi><mi>M</mi><mn>2</mn><mo>−</mo><mi>l</mi><mi>i</mi><mi>k</mi><mi>e</mi><mi mathvariant="normal">∣</mi><mi>c</mi><mi>l</mi><mi>u</mi><mi>s</mi><mi>t</mi><mi>e</mi><mi>r</mi><mo>=</mo><mn>2</mn><mo>)</mo><mo>=</mo><mn>0.4</mn></mrow><annotation encoding="application/x-tex">P(PM2-like |cluster = 2 ) = 0.4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mord mathdefault">e</span><span class="mord">∣</span><span class="mord mathdefault">c</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">u</span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">4</span></span></span></span></li>
+<li>数据量大的 T4 有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>T</mi><mn>4</mn><mi mathvariant="normal">∣</mi><mi>c</mi><mi>l</mi><mi>u</mi><mi>s</mi><mi>t</mi><mi>e</mi><mi>r</mi><mo>=</mo><mn>1</mn><mo>)</mo><mo>&lt;</mo><mn>0.2</mn></mrow><annotation encoding="application/x-tex">P(T4|cluster = 1) &lt; 0.2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord">4</span><span class="mord">∣</span><span class="mord mathdefault">c</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">u</span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">2</span></span></span></span> 又 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>c</mi><mi>l</mi><mi>u</mi><mi>s</mi><mi>t</mi><mi>e</mi><mi>r</mi><mo>=</mo><mn>1</mn><mi mathvariant="normal">∣</mi><mi>T</mi><mn>4</mn><mo>)</mo><mo>=</mo><mn>0.5</mn></mrow><annotation encoding="application/x-tex">P(cluster=1|T4)=0.5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathdefault">c</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">u</span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mord">∣</span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord">4</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">5</span></span></span></span> 且 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>T</mi><mn>4</mn><mi mathvariant="normal">∣</mi><mi>c</mi><mi>l</mi><mi>u</mi><mi>s</mi><mi>t</mi><mi>e</mi><mi>r</mi><mo>=</mo><mn>10</mn><mo>)</mo><mo>=</mo><mn>0.92</mn></mrow><annotation encoding="application/x-tex">P(T4|cluster=10)=0.92</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord">4</span><span class="mord">∣</span><span class="mord mathdefault">c</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">u</span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">9</span><span class="mord">2</span></span></span></span> 又 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>c</mi><mi>l</mi><mi>u</mi><mi>s</mi><mi>t</mi><mi>e</mi><mi>r</mi><mo>=</mo><mn>10</mn><mi mathvariant="normal">∣</mi><mi>T</mi><mn>4</mn><mo>)</mo><mo>=</mo><mn>0.5</mn></mrow><annotation encoding="application/x-tex">P(cluster=10|T4)=0.5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathdefault">c</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">u</span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">∣</span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord">4</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">5</span></span></span></span> 。</li>
+<li>对于比较少的分类效果更差</li>
+</ul>
+<h2 id="可视化实验-edmot">可视化实验 —— Edmot</h2>
+<figure data-type="image" tabindex="2"><img src="http://rikugen.in/post-images/1613157387023.png" alt="" loading="lazy"></figure>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="http://rikugen.in/post/tosa-jin-qi-gong-zuo-ji-hua/">
+                  <h3 class="post-title">
+                     TOSA 近期工作计划
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>
