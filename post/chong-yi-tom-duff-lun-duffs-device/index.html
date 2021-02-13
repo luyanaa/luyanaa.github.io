@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>重译： Tom Duff 论 Duff&#39;s Device | 退思录 Meditation</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="http://rikugen.in/favicon.ico?v=1613227419820">
+<link rel="stylesheet" href="http://rikugen.in/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+
+
+    <meta name="description" content="
+原文链接： http://www.lysator.liu.se/c/duffs-device.html#duffs-device
+
+
+
+Subject: Re: Explanation, please!Summary: Original ..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="http://rikugen.in">
+        <img src="http://rikugen.in/images/avatar.png?v=1613227419820" class="site-logo">
+        <h1 class="site-title">退思录 Meditation</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            Index
+          </a>
+        
+      
+        
+          <a href="http://rikugen.in/archives" class="site-nav">
+            Archives
+          </a>
+        
+      
+        
+          <a href="/post/links" class="site-nav">
+            Links
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            About Me
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/luyanaa" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+          <a class="social-link" href="https://www.zhihu.com/people/robin-68-93-62" target="_blank">
+            <i class="fab fa-zhihu"></i>
+          </a>
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      天际划过的流星，已经消失在夜空中
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="http://rikugen.in/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">重译： Tom Duff 论 Duff&#39;s Device</h2>
+            <div class="post-date">2019-11-10</div>
+            
+            <div class="post-content" v-pre>
+              <blockquote>
+原文链接： http://www.lysator.liu.se/c/duffs-device.html#duffs-device
+</blockquote>
+<!--more-->
+<blockquote>
+<p>Subject: Re: Explanation, please!<br>Summary: Original citation<br>From: td@alice.UUCP (Tom Duff)<br> Organization: AT&amp;T Bell Laboratories, Murray Hill NJ<br>Date: 29 Aug 88 20:33:51 GMT<br>Message-ID: <a href="&#x6d;&#97;&#105;&#x6c;&#116;&#111;&#58;&#x38;&#x31;&#52;&#x34;&#x40;&#97;&#x6c;&#105;&#99;&#x65;&#x2e;&#85;&#x55;&#67;&#80;">&#x38;&#x31;&#52;&#x34;&#x40;&#97;&#x6c;&#105;&#99;&#x65;&#x2e;&#85;&#x55;&#67;&#80;</a></p>
+</blockquote>
+我一般并不读 <code>comp.lang.c</code> ，但是 Jim McKie 告诉我 Duff’s Device 又在 <code>comp.lang.c</code> 中出现了。我已经丢失了在 1984 年 5 月寄给 netnews 的那个版本，不过我根据回忆重现了如下的关于我原本提出的 device 的注解。（倘若有谁有 netnews 版本的拷贝，我很乐意有人能给 <code>research!td</code> 或是 <code>td@research.att.com</code> 发送一份拷贝。
+<p>澄清以下几点：</p>
+<ul>
+<li>这个 device 的意义是直接用 C 表达循环展开。那些说用 <code>memcpy</code> 就好的人会错了意，那些批评的人用了许多依赖架构特性的 <code>memcpy</code> 实现作为论据。事实上，这封邮件中只是用 <code>memcpy</code> 举例，它的实际含义并不能用 <code>memcpy</code> 或是有实现类似功能的语句来解读。</li>
+<li>有些人说虽然这种 device 以我命名，但我并没有真正发明这种 device 。我十有八九发明了这种 device 。我在想到它之前肯定没有看到或者听到过相关内容。当时没有人声称自己有想到过这点，更不要说给出自己发表的时间了。注意一下下面的消息的头，显然我在 1983 年的 11 月 9 日发明了这个 device ，并自豪又恶心的发了邮件给 <code>dmr</code> 。请注意我并没有声称自己发明了循环展开这一技术，我所发明的只是 C 语言中的这个特定的技巧。</li>
+<li>这个 device 在 dpANS C 下是完全合法的。我一时没办法想起具体的章节，但是 Larry Rosler ，我想应该是这门语言的小组委员会的主席，向我保证 X3J11 （译者注： X3J11 是 ANSI 组建的一个委员会，负责制定后来我们所说的 ANSI C 标准。）已经仔细研究过这段代码，并且认为这段代码合法。之前 dmr 给我过一份便签，说他已经确认过，所有他信任的编译器都能编译这段代码。当然，既然 Bjarne 在他的书中用了这段代码，这段代码在 C++ 中应该也同样合法。</li>
+<li>有些人试图援引，（更加正确地说，驱逐）“虚假的效率之神”。仔细阅读我原先的邮件，这种诽谤就不攻自破了。如果不愿向劣质代码卑躬屈膝，那么我们就不得不找一个更好的算法。必须确定这样的算法存在与否。如果你的代码太慢，你必须优化它们。如果没有更好的算法，那么你必须减少运行的时钟周期次数。</li>
+<li>同样的人还会声称这样写并不会获得期望的加速。这个论点在两个方面都是有问题的。首先，它并没有保证这个 device 会有更高性能，而是保证了它的其中一个用途（实现 <code>memcpy</code> ）在许多有高效的函数实现的机器上同样会有较好的表现。其次，一个发帖人并没有测量程序用时的数据来支撑他的假设。另一个人做了这样的测试，但是把实现弄得很糟，只证明了即使十分努力，也能让某个东西跑的缓慢。</li>
+</ul>
+<p>甚至几乎从不犯错的 Henry Spencer 也犯了错（尽管是鸡毛蒜皮的小错）。这是 Henry 回答 T. William Wells  <code>bill@proxftl.UUCP</code> 的一个片段:</p>
+<blockquote>
+… 这代码绝对是在 RISC 的机器上写的。<br>不，贝尔实验室通常用 VAX 和 68k 。
+</blockquote>
+<p>发明这种 device 的时候，我还在卢卡斯影业。</p>
+<p>像这样的改变只能通过评估结果代码来评判。当你展开循环不够多，以致超过指令缓存的容量的时候，你就应该小心了。别装作自己比一个足够聪明的能识别实现块移动或是清零的循环并把它们随机应变的优化的 C 编译器更聪明。</p>
+<p>接下来是 Duff’s Device 的原始文献。</p>
+<blockquote>
+<p>From research!ucbvax!dagobah!td  Sun Nov 13 07:35:46 1983<br>Received: by ucbvax.ARPA (4.16/4.13)  id AA18997; Sun, 13 Nov 83 07:35:46 pst<br>Received: by dagobah.LFL (4.6/4.6b)  id AA01034; Thu, 10 Nov 83 17:57:56 PST<br>Date: Thu, 10 Nov 83 17:57:56 PST<br>From: ucbvax!dagobah!td (Tom Duff)<br>Message-Id: <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#56;&#x33;&#x31;&#49;&#49;&#49;&#48;&#49;&#53;&#x37;&#x2e;&#x41;&#65;&#x30;&#49;&#48;&#51;&#52;&#64;&#100;&#x61;&#x67;&#x6f;&#98;&#x61;&#x68;&#x2e;&#76;&#70;&#x4c;">&#56;&#x33;&#x31;&#49;&#49;&#49;&#48;&#49;&#53;&#x37;&#x2e;&#x41;&#65;&#x30;&#49;&#48;&#51;&#52;&#64;&#100;&#x61;&#x67;&#x6f;&#98;&#x61;&#x68;&#x2e;&#76;&#70;&#x4c;</a><br>To: ucbvax!decvax!hcr!rrg, ucbvax!ihnp4!hcr!rrg, ucbvax!research!dmr, ucbvax!research!rob</p>
+</blockquote>
+<p>考虑如下的一段从 <code>Evans &amp; Sutherland Picture System II</code> 的代码摘抄出的用于拷贝一个 <code>short</code> 类型数组到 IO 数据寄存器的代码。</p>
+<pre><code class="language-c">        send(to, from, count)
+	register short *to, *from;
+	register count;
+	{
+		do
+			*to = *from++;
+		while(--count&gt;0);
+	}
+</code></pre>
+<p>显然，当0时这段代码便不能如愿运行。<br>
+VAX 上的 C 编译器将这段话编译成两个指令（我感觉是一个 <code>movw</code> 和一个 <code>sobleq</code> ）<br>事实表明，这个循环是一个实时动画回放系统的瓶颈。这个系统比预期的执行速度慢了将近 50% 。传统的加速这种代码的做法是展开循环若干次，减少 <code>sobleq</code> 语句的执行次数。 但你最后总会有一个剩余的部分循环无法完全展开。在 C 语言中，我一般用一个索引原先循环体的拷贝的列表的<code>switch</code> 来处理这个问题。当然，如果我在写汇编代码，我就会直接展开循环开解决这些剩余。昨天我思索了一会，想到了这样的一个解决方案：</p>
+<pre><code class="language-c">	send(to, from, count)
+	register short *to, *from;
+	register count;
+	{
+		register n=(count+7)/8;
+		switch(count%8){
+		case 0:	do{	*to = *from++;
+		case 7:		*to = *from++;
+		case 6:		*to = *from++;
+		case 5:		*to = *from++;
+		case 4:		*to = *from++;
+		case 3:		*to = *from++;
+		case 2:		*to = *from++;
+		case 1:		*to = *from++;
+			}while(--n&gt;0);
+		}
+	}
+</code></pre>
+<p>看起来确实很恶心，不过它编译和运行都完美无缺。我对这个发现既感觉骄傲又感觉有所嫌恶。如果没有人想到过这个想法，我打算用我自己的名字来命名它。<br>
+即使是我写了 10 年的 C 语言，令我震惊的是我还有许多角角落落没有完全寻访。（事实上，我还有另一种极其恶心的使用 switch 去实现中断驱动状态机的方法，不过它实在是过于令人讨厌了。）<br>
+许多人（甚至是 <a href="http://www.lysator.liu.se/c/bwk/index.html" target="_blank" rel="noopener">Brian W. Kernighan</a>  ） 都曾说过 C 语言中最糟糕的一个特性是 switch 不在某个 case 语句前自动跳出。这种代码造成了不少争论，但我也不确定谁对谁错。<br>
+你诚挚的，<br>Tom</p>
+<!-- more -->
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="http://rikugen.in/post/2017-liu-sheng-lian-he-sheng-xuan-jie-ti-bao-gao-v10-xia/">
+                  <h3 class="post-title">
+                    2017 六省联合省选 解题报告 v1.0 （下）
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>
