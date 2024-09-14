@@ -29,34 +29,24 @@ content:
   - title: Master (2023~) # Title for the section
     layout: list # Type of content section (list/text)
     content:
-      - layout: top-middle
+      - layout: left
         title: Department of Computational Biology and Medical Sciences, Graduate School of Frontier Sciences, The University of Tokyo
+        sub_title: (Expected) Master of Science in Computational Biology. 
         link: https://www.cbms.k.u-tokyo.ac.jp/
-        # link_text: Project Website
-        additional_links:
-          - title: Toyoshima Lab
-            url: https://www.bs.s.u-tokyo.ac.jp/~toyoshimalab/
         caption: 2023 - 2025 (Expected)
-        # quote: >
-        #   This is probably one of the greatest apps ever created, if you don't agree you're probably wrong.
         description: | # this will include new lines to allow paragraphs
-          Working in C. elegans neural signal and machine learning.
+          [Toyoshima Lab](https://www.bs.s.u-tokyo.ac.jp/~toyoshimalab/), working in C. elegans neural signal and machine learning.
 
   - title: Bachelor (2019 ~ 2023) # Title for the section
     layout: list # Type of content section (list/text)
     content:
-      - layout: top-middle
-        title: Tongji University, Shanghai, China
-        link: https://www.tongji.edu.cn/
+      - layout: left
+        title: Department of Information and Communication Engineering，College of Electronic and Information Engineering, Tongji University, Shanghai, China
+        link: https://comm.tongji.edu.cn/
         sub_title: Bachelor of Engineering Degree in Telecommunication Engineering.
-        additional_links:
-          - title: Department of Information and Communication Engineering.  
-            url: https://comm.tongji.edu.cn/
         caption: 2019 - 2023
-        # quote: >
-        #   Solving 21st century problems by diging holes and making game changing products like the *not a flamethrower*
         description: | # this will include new lines to allow paragraphs
-          Previous Member of '[TJ-ACLab](https://github.com/TJ-ACLAB) worked in EEG signal analysis and deep learning.
+          Previous Member of [TJ-ACLab](https://github.com/TJ-ACLAB) worked in EEG signal analysis and deep learning.
           
           Member of [Tongji SuperPower](https://github.com/superpower2022) and [Tongji Open Source Association](https://github.com/opentj).
           
