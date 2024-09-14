@@ -1,0 +1,78 @@
+# Site
+repository: sproogen/resume-theme
+favicon: images/favicon.ico
+
+# Content configuration version
+version: 2
+
+# Personal info
+name: Yan Lu
+title: Graduate Student
+email: robinluaa@outlook.com
+website: robin.hong.ren
+
+# Dark Mode (true/false/never)
+darkmode: false
+
+# Social links
+twitter_username: RobinLu95522828
+github_username:  luyanaa
+orcid_username: 0000-0001-8282-4748
+
+# About Section
+# about_title: About Me
+about_profile_image: images/profile.jpg
+about_content: | # this will include new lines to allow paragraphs
+  I'm known as Yan Lu (陆 言), where Lu is my last name, or Robin Lu where Robin is my English Name.
+
+content:
+  - title: Master (2023~) # Title for the section
+    layout: list # Type of content section (list/text)
+    content:
+      - layout: top-middle
+        title: Department of Computational Biology and Medical Sciences, Graduate School of Frontier Sciences, The University of Tokyo
+        link: https://www.cbms.k.u-tokyo.ac.jp/
+        # link_text: Project Website
+        additional_links:
+          - title: Toyoshima Lab
+            url: https://www.bs.s.u-tokyo.ac.jp/~toyoshimalab/
+        caption: 2023 - 2025 (Expected)
+        # quote: >
+        #   This is probably one of the greatest apps ever created, if you don't agree you're probably wrong.
+        description: | # this will include new lines to allow paragraphs
+          Working in C. elegans neural signal and machine learning.
+
+  - title: Bachelor (2019 ~ 2023) # Title for the section
+    layout: list # Type of content section (list/text)
+    content:
+      - layout: top-middle
+        title: Tongji University, Shanghai, China
+        link: https://www.tongji.edu.cn/
+        sub_title: Bachelor of Engineering Degree in Telecommunication Engineering.
+        additional_links:
+          - title: Department of Information and Communication Engineering.  
+            url: https://comm.tongji.edu.cn/
+        caption: 2019 - 2023
+        # quote: >
+        #   Solving 21st century problems by diging holes and making game changing products like the *not a flamethrower*
+        description: | # this will include new lines to allow paragraphs
+          Previous Member of '[TJ-ACLab](https://github.com/TJ-ACLAB) worked in EEG signal analysis and deep learning.
+          
+          Member of [Tongji SuperPower](https://github.com/superpower2022) and [Tongji Open Source Association](https://github.com/opentj).
+          
+          [Outstanding Intern](https://github.com/lazyparser/weloveinterns/blob/master/outstanding-interns.md) in [PLCT Lab](https://github.com/plctlab), ISCAS, RISC-V and High-Performance Computing.
+          
+
+# Footer
+footer_show_references: true
+# references_title: References on request (Override references text)
+
+# Build settings
+remote_theme: sproogen/resume-theme
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+plugins:
+ - jekyll-seo-tag
